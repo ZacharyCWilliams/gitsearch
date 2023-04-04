@@ -23,7 +23,7 @@ Introducing GitSearch: an elegant user interface that lets you search for GitHub
 1. Clone the repository:
 
 ```
-git clone https://github.com/your-username/gitsearch.git
+git clone https://github.com/zacharycwilliams/gitsearch.git
 ```
 
 2. Install the dependencies:
