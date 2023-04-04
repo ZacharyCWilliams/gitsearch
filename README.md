@@ -4,6 +4,8 @@ Introducing GitSearch: an elegant user interface that lets you search for GitHub
 
 [Click Here to see a live version of GitSearch]()
 
+![GitSearch](./assets/readme.png "GitSearch")
+
 ## Features
 
 * Search for GitHub profiles
