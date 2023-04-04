@@ -36,7 +36,10 @@ cd gitsearch && npm install
 npm start
 ```
 
-4. View project at http://localhost:3000
+4. View project at: 
+```
+http://localhost:3000
+```
 
 5. Run tests:
 
