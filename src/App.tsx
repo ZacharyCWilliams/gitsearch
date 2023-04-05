@@ -76,28 +76,32 @@ function App() {
     [input, page, sort, filter]
   );
 
-  // autosuggestions
+  const paginationUpdate = useCallback(async () => {
+    const profileRepoData = await getProfile(
+      submittedInput,
+      page,
+      sort,
+      filter
+    );
+
+    const filteredRepos = applyFilters(profileRepoData, sort, filter);
+    
+    setUnfilteredRepos(profileRepoData);
+    setProfileRepos(filteredRepos);
+  }, [submittedInput, page, sort, filter]);
+
   useEffect(() => {
     const fetchProfileSuggestions = async () => {
       const profileSuggestions = await getProfileSuggestions(debouncedValue);
       setSuggestions(profileSuggestions);
-    };
+    }
 
     fetchProfileSuggestions();
   }, [debouncedValue]);
 
-  // pag, sort, filter refetch
   useEffect(() => {
-    if (submittedInput) {
-      getProfile(submittedInput, page, sort, filter);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [submittedInput, page, sort, filter]);
-
-  useEffect(() => {
-    const filteredRepos = applyFilters(unfilteredRepos, sort, filter);
-    setProfileRepos(filteredRepos);
-  }, [unfilteredRepos, sort, filter]);
+    if (submittedInput) paginationUpdate();
+  }, [paginationUpdate, submittedInput, page, sort, filter]);
 
   return (
     <div className="min-h-screen">
