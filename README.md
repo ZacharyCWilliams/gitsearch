@@ -2,7 +2,7 @@
 
 Introducing GitSearch: an elegant user interface that lets you search for GitHub profiles using the GitHub REST API. It displays cards with linked GitHub repos you can click on and view. It paginates the list of repositories, lets you filter and sort through them. It also pulls autocomplete suggestions from the API.
 
-[Click Here to see a live version of GitSearch]()
+[Click Here to see a live version of GitSearch](https://gitsearch-32238.web.app/)
 
 ![GitSearch](./src/assets/readme.png "GitSearch")
 
